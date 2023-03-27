@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+/* normalize */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* establecela altura de la pagina para poder realizar el degradado */
+
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana;
+  background: linear-gradient(#8eb5da, #54549e);
+}
+
+/* Se le da una posición absoluta centrada vertical y horizontalmente. Con un ancho de 400px, un relleno (padding) de 40 px y una opacidad de 50% (transparencia en el fondo), tambien contiene una sombra y un borde circular */
+
+.caja{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px 20px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0 5px 15px rgba(139, 128, 249, 0.6);
+  border-radius: 10px;
+}
+
+/* Establece un margen inferior de 30px, un color de texto blanco y un centrado de texto. (inicio de sesion) */
+
+.caja h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+/* Establece una posición relativa para el elemento. (Email y password)*/
+
+.caja .caja-input {
+  position: relative;
+}
+
+/* establece un ancho de 100% para el contenido del input (las respuestas), con un relleno (padding) un tamaño de 16 px, el color de la letra blanco, un margen bottom(un espacio hacia abajo de 30 px) sin ningun borde y un borde abajo de 1px blanco y fondo  */
+
+.caja .caja-input input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+
+.caja .caja-input label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+
+/* Color del input (dato pedido) que con el efecto cambia a blanco */
+
+.caja .caja-input input:focus ~ label,
+.caja .caja-input input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #8b80f9;
+  font-size: 12px;
+}
+
+/* boton acceder, un display en linea y un relleno (padding), color purpura, con un tamaño de letra de 16px, sin decoracion.text-transform pasa el texto a mayusculas, se establece un desbordamiento oculto, una transición de 0.5 segundos, un margen superior de 40 píxeles y un espaciado de letras de 4 píxeles. un overflow: hidden se utiliza para especificar qué hacer cuando el contenido de un elemento desborda sus límites. Al asignarle el valor hidden, se oculta el contenido que se sale de los límites del elemento. si lo quitamos las lineas sobresaldran;  */
+
+.caja form .botones {
+  display: inline-block;
+  position: relative;
+  padding: 10px 20px;
+  color: #8b80f9;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin: 5px 10px 2px 10px;
+  letter-spacing: 4px;
+}
+
+.containerButtons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* hover es utilizado para cuando el cursor pasa sobre este, la caja tiene un fondo purpura, con letras blancas y un sombreado de 5, 25, 50 y 100px */
+
+.caja .botones:hover {
+  background: #8b80f9;
+  color: #fff;
+  border-radius: 5px;
+  /* box-shadow: 0 0 5px #8b80f9, 0 0 25px #8b80f9, 0 0 50px #8b80f9,
+    0 0 100px #8b80f9; */
+}
+
+.conteinerRecuperar{
+  text-align: center;
+}
+.forgotPassword{
+  color: #fff;
+  margin: auto;
+}
+
+.forgorPassword:hover{
+    background: none;
+  }
+  
+  /* este le da estilo a los span, una posicion absoluta y como bloque */
+  
+  .caja .botones span {
+    position: absolute;
+    display: block;
+  }
+  
+  /* animaciones para el boton Acceder, caja a span:nth-child(1) se refiere al primer span, lo que significa que el elemento está posicionado en la parte superior izquierda del botón y está oculto fuera del área visible del botón.El fondo de esta línea horizontal se establece como un gradiente lineal que va desde transparente a purpura. a animación se define mediante la regla "@keyframes animacaoBotao1", que describe cómo se mueve el elemento a lo largo del tiempo (en un lapso de un segundo) y se utiliza infinite para que la animación se repita continuamente. */
+  
+  /* ASI CON LOS OTROS 3 SPAN */
+  
+  .caja .botones span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #8b80f9);
+    animation: animacionBoton1 1.5s linear infinite;
+  }
+  
+  @keyframes animacionBoton1 {
+    0% {
+      left: -100%;
+    }
+    50%,
+    100% {
+      left: 100%;
+    }
+  }
+  
+  .caja .botones span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #8b80f9);
+    animation: animacionBoton2 1.5s linear infinite;
+    animation-delay: 0.25s;
+  }
+  
+  @keyframes animacionBoton2 {
+    0% {
+      top: -100%;
+    }
+    50%,
+    100% {
+      top: 100%;
+    }
+  }
+  
+  .caja .botones span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #8b80f9);
+    animation: animacionBoton3 1.5s linear infinite;
+    animation-delay: 0.5s;
+  }
+  
+  @keyframes animacionBoton3 {
+    0% {
+      right: -100%;
+    }
+    50%,
+    100% {
+      right: 100%;
+    }
+  }
+  
+  .caja .botones span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #8b80f9);
+    animation: animacionBoton4 1.5s linear infinite;
+    animation-delay: 0.75s;
+  }
+  @keyframes animacionBoton4 {
+    0% {
+      bottom: -100%;
+    }
+    50%,
+    100% {
+      bottom: 100%;
+    }
+  }
+  
+  img{
+    display: block;
+    margin: 20px auto;
+    max-width: 100px;
+  }
+  
+  
+  @media only screen and (max-width: 415px) {
+    .caja{
+      max-width: 90%;
+    }
+  
+    .containerButtons{
+      flex-direction: column;
+    }
+  
+    .botones{
+      text-align: center;
+    }
+  }
