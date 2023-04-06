@@ -4,10 +4,18 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
 .container {
     width: 65%;
     margin: auto;
     display: flex;
+    justify-content: center;
     border: 1px solid black;
 }
 
@@ -30,6 +38,7 @@
 .right_section{
     text-align: center;
     background-color: #f4f3f4;
+    height: 2000px;
 }
 
 .title_right_section{
@@ -60,6 +69,7 @@
 }
 
 .boton_enviar_formulario{
+    margin-bottom: 25px;
     color: #ffffff;
     width: 150px;
     padding: 10px;
@@ -72,32 +82,34 @@
 
 .boton_enviar_formulario:hover {
     cursor: pointer;
-  }
+}
 
 .input-wrapper {
     position: relative;
-  }
+}
   
-  .input_form_login {
+.input_form_login {
     padding-left: 40px; /* Para dejar espacio para el icono */
-  }
+}
   
-  i.fas {
+i.fas {
     color: #aaaaaa;
     position: absolute;
     top: 10px;
     left: 10px;
     font-size: 20px;
-  }
+}
 
-  i.fa-solid {
+i.fa-solid {
     position: absolute;
     top: 10px;
     left: 10px;
     font-size: 20px;
     color: #aaaaaa;
-  }
+}
+
 a{
+    margin-top: 12px;
     text-decoration: none;
     color: black;
 }
